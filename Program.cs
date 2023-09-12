@@ -40,7 +40,10 @@ namespace Sello_Mart
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");
 
-            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            app.UseCors(builder => {
+                builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                builder.WithHeaders(new string[1]{"Access-Control-Allow-Origin" });
+            });
             app.MapControllers();
 
             app.Run();

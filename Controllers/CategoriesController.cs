@@ -12,7 +12,6 @@ namespace Sello_Mart.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [EnableCors("AllowOrigin")]
     public class CategoriesController : Controller
     {
         private readonly CommyDBContext _context;
